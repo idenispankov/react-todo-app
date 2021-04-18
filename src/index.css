@@ -99,3 +99,9 @@
   margin-bottom: 10px;
   color: red;
 }
+
+.success {
+  padding: 10px;
+  margin-bottom: 10px;
+  color: green;
+}

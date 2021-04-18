@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const Form = ({ todos, setTodos, setErrorMessage }) => {
+const Form = ({ todos, setTodos, setErrorMessage, setSuccessMessage }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e) => {
@@ -19,6 +19,10 @@ const Form = ({ todos, setTodos, setErrorMessage }) => {
     }
     setTodos([...todos, { todoText: inputValue, todoId: uuidv4() }]);
     setInputValue('');
+    setSuccessMessage(true);
+    setTimeout(() => {
+      setSuccessMessage(false);
+    }, 2000);
   };
 
   return (
