@@ -41,13 +41,15 @@
   width: 30%;
   border: none;
   border-radius: 5px;
+  outline: none;
+  cursor: pointer;
 }
 
 .list {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .list__item {
@@ -61,8 +63,20 @@
   justify-content: space-between;
 }
 
-.list__item-button {
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.list__item-delete-button {
   color: red;
   font-size: 18px;
+  cursor: pointer;
+}
+
+.list__item-edit-button {
+  display: flex;
+  color: blue;
+  margin-right: 20px;
   cursor: pointer;
 }
