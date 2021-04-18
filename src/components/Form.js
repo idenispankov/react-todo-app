@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const Form = ({ todos, setTodos }) => {
+const Form = ({ todos, setTodos, setErrorMessage }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e) => {
@@ -11,6 +11,10 @@ const Form = ({ todos, setTodos }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim() === '') {
+      setErrorMessage(true);
+      setTimeout(() => {
+        setErrorMessage(false);
+      }, 2000);
       return;
     }
     setTodos([...todos, { todoText: inputValue, todoId: uuidv4() }]);
