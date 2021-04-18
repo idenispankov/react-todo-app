@@ -105,3 +105,9 @@
   margin-bottom: 10px;
   color: green;
 }
+
+.delete {
+  padding: 10px;
+  margin-bottom: 10px;
+  color: rgb(20, 109, 224);
+}

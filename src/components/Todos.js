@@ -1,8 +1,10 @@
-import React from 'react';
-
-const Todos = ({ todos, setTodos }) => {
+const Todos = ({ todos, setTodos, setDeleteMessage }) => {
   const handleDelete = (id) => {
     setTodos(todos.filter((todo) => todo.todoId !== id));
+    setDeleteMessage(true);
+    setTimeout(() => {
+      setDeleteMessage(false);
+    }, 2000);
   };
 
   const handleEditTodo = (id, text) => {
