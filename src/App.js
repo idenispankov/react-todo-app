@@ -15,3 +15,10 @@ function App() {
 }
 
 export default App;
+
+//  Next to create:
+//  1. Error Message
+//  2. Success message
+//  3. Popup for edit todos
+//  4. NavBar Component with Routes
+//  5. Route for description of each todo onClick
