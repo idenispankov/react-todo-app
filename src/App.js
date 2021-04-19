@@ -73,3 +73,5 @@ export default App;
 //  4. NavBar Component with Routes
 //  5. Route for description of each todo onClick
 //  6. Wrong url Error Route
+
+//  7. Try to clear code as much as possible
