@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
-  const [todos, setTodos] = ['some', 'some2', 'some3'];
+  const [todos, setTodos] = useState([]);
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -11,7 +11,16 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (inputValue.trim() === '') {
+      return;
+    }
+    const newTodos = [...todos, { id: uuidv4(), text: inputValue }];
+    setTodos(newTodos);
     setInputValue('');
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -28,8 +37,21 @@ function App() {
           value={inputValue}
           onChange={handleChange}
         />
-        <button className='button'>Add Todo</button>
+        <button className='button' type='submit'>
+          Add Todo
+        </button>
       </form>
+      <ul className='list'>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            {todo.text}
+            <button className='button'>Edit Todo</button>
+            <button className='button' onClick={() => deleteTodo(todo.id)}>
+              Delete Todo
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
