@@ -47,7 +47,7 @@ const Form = ({
         onChange={handleChange}
         ref={inputRef}
       />
-      <button type='submit' className='form__button'>
+      <button type='submit' className='button form__button'>
         Add
       </button>
     </form>

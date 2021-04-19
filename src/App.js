@@ -9,21 +9,33 @@ function App() {
   const [errorMessage, setErrorMessage] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
   const [deleteMessage, setDeleteMessage] = useState(false);
+  const [clearMessage, setClearMessage] = useState(false);
 
   const inputRef = useRef(null);
+
+  const handleClearTodos = () => {
+    setTodos([]);
+    setMessage(true);
+    setClearMessage(true);
+    setTimeout(() => {
+      setMessage(false);
+      setClearMessage(false);
+    }, 2000);
+  };
 
   useEffect(() => {
     inputRef.current.focus();
   });
 
   return (
-    <div className='page__container'>
+    <div className='page__container' message={message} setMessage={setMessage}>
       <h1 className='heading'>React Todo App</h1>
       {message && (
         <Message
           errorMessage={errorMessage}
           successMessage={successMessage}
           deleteMessage={deleteMessage}
+          clearMessage={clearMessage}
         />
       )}
 
@@ -41,6 +53,11 @@ function App() {
         setDeleteMessage={setDeleteMessage}
         setMessage={setMessage}
       />
+      {todos.length > 0 && (
+        <button className='button' onClick={handleClearTodos}>
+          Clear List
+        </button>
+      )}
     </div>
   );
 }

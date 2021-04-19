@@ -1,4 +1,9 @@
-const Message = ({ errorMessage, successMessage, deleteMessage }) => {
+const Message = ({
+  errorMessage,
+  successMessage,
+  deleteMessage,
+  clearMessage,
+}) => {
   return (
     <p
       className={`message ${
@@ -8,6 +13,8 @@ const Message = ({ errorMessage, successMessage, deleteMessage }) => {
           ? 'success'
           : deleteMessage
           ? 'delete'
+          : clearMessage
+          ? 'clear'
           : ''
       }`}
     >
@@ -17,6 +24,8 @@ const Message = ({ errorMessage, successMessage, deleteMessage }) => {
         ? 'Todo Added...'
         : deleteMessage
         ? 'Todo Deleted...'
+        : clearMessage
+        ? 'List Cleared...'
         : ''}
     </p>
   );

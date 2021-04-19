@@ -1,11 +1,4 @@
-const Todos = ({
-  todos,
-  setTodos,
-  setDeleteMessage,
-  setMessage,
-  isCompleted,
-  setIsCompleted,
-}) => {
+const Todos = ({ todos, setTodos, setDeleteMessage, setMessage }) => {
   const handleDelete = (id) => {
     setTodos(todos.filter((todo) => todo.todoId !== id));
     setDeleteMessage(true);
@@ -29,7 +22,7 @@ const Todos = ({
         return (
           <li
             key={todo.todoId}
-            className={`list__item ${isCompleted && 'list__item-completed'}`}
+            className='list__item'
             onDoubleClick={() => handleComplete(todo.todoId)}
           >
             {todo.todoText}
