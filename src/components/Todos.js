@@ -1,10 +1,12 @@
-const Todos = ({ todos, setTodos, setDeleteMessage }) => {
+const Todos = ({ todos, setTodos, setDeleteMessage, setMessage }) => {
   const handleDelete = (id) => {
     setTodos(todos.filter((todo) => todo.todoId !== id));
     setDeleteMessage(true);
+    setMessage(true);
     setTimeout(() => {
       setDeleteMessage(false);
-    }, 1500);
+      setMessage(false);
+    }, 2000);
   };
 
   const handleEditTodo = (id, text) => {

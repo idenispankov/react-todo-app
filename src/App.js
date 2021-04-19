@@ -1,32 +1,41 @@
 import { useState } from 'react';
 import Form from './components/Form';
 import Todos from './components/Todos';
-import Error from './components/Error';
-import Success from './components/Success';
-import DeleteSuccess from './components/DeleteSuccess';
+import Message from './components/Message';
 
 function App() {
   const [todos, setTodos] = useState([]);
   const [errorMessage, setErrorMessage] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
   const [deleteMessage, setDeleteMessage] = useState(false);
+  const [message, setMessage] = useState(false);
+  const [messageText, setMessageText] = useState('');
 
   return (
     <div className='page__container'>
-      <h1 className='test'>React Todo App</h1>
-      {errorMessage && <Error />}
-      {successMessage && <Success />}
-      {deleteMessage && <DeleteSuccess />}
+      <h1 className='heading'>React Todo App</h1>
+      {message && (
+        <Message
+          errorMessage={errorMessage}
+          successMessage={successMessage}
+          deleteMessage={deleteMessage}
+          messageText={messageText}
+        />
+      )}
+
       <Form
         todos={todos}
         setTodos={setTodos}
         setErrorMessage={setErrorMessage}
         setSuccessMessage={setSuccessMessage}
+        setMessage={setMessage}
+        setMessageText={setMessageText}
       />
       <Todos
         todos={todos}
         setTodos={setTodos}
         setDeleteMessage={setDeleteMessage}
+        setMessage={setMessage}
       />
     </div>
   );
@@ -38,7 +47,7 @@ export default App;
 //  1. Error Message - Done
 //  2. Success message - Done
 //  3. Delete Success Message - Done
-//  4. Combine messages together
+//  4. Combine messages together - Done
 
 //  5. Popup for edit todos
 //  6. Confirm Popup for delete todo

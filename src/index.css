@@ -11,20 +11,23 @@
 
 .page__container {
   max-width: 500px;
-  /* height: 100vh; */
   margin: 50px auto;
-  background: rgb(182, 182, 233);
+  background: rgb(34, 34, 73);
   border-radius: 10px;
   padding: 30px;
 }
 
+.heading {
+  color: #fff;
+  padding-bottom: 20px;
+}
+
 .form {
-  margin: 0;
+  margin: 0 0 20px 0;
   width: 100%;
   height: 40px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
 }
 
 .form__input {
@@ -39,12 +42,12 @@
 .form__button {
   height: 100%;
   font-size: 18px;
+  font-weight: 600;
   width: 30%;
   border: none;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
-  color: purple;
 }
 
 .list {
@@ -64,6 +67,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .list__item:last-child {
@@ -89,25 +93,22 @@
   cursor: pointer;
 }
 
-.test {
-  color: purple;
-  margin: 0 0 30px;
-}
-
 .error {
-  padding: 10px;
-  margin-bottom: 10px;
   color: red;
 }
 
 .success {
-  padding: 10px;
-  margin-bottom: 10px;
   color: green;
 }
 
 .delete {
+  color: rgb(62, 144, 250);
+}
+
+.message {
   padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
   margin-bottom: 10px;
-  color: rgb(20, 109, 224);
 }

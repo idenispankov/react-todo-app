@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const Form = ({ todos, setTodos, setErrorMessage, setSuccessMessage }) => {
+const Form = ({
+  todos,
+  setTodos,
+  setErrorMessage,
+  setSuccessMessage,
+  setMessage,
+}) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e) => {
@@ -12,17 +18,22 @@ const Form = ({ todos, setTodos, setErrorMessage, setSuccessMessage }) => {
     e.preventDefault();
     if (inputValue.trim() === '') {
       setErrorMessage(true);
+      setMessage(true);
+
       setTimeout(() => {
         setErrorMessage(false);
-      }, 1500);
+        setMessage(false);
+      }, 2000);
       return;
     }
     setTodos([...todos, { todoText: inputValue, todoId: uuidv4() }]);
     setInputValue('');
     setSuccessMessage(true);
+    setMessage(true);
     setTimeout(() => {
       setSuccessMessage(false);
-    }, 1500);
+      setMessage(false);
+    }, 2000);
   };
 
   return (
