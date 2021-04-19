@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: beige;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  background-color: burlywood;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
