@@ -23,6 +23,13 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const editTodo = (id) => {
+    alert('Edit coming soon...');
+  };
+  const clearTodos = () => {
+    setTodos([]);
+  };
+
   return (
     <div className='container'>
       <nav className='navbar'>
@@ -45,13 +52,18 @@ function App() {
         {todos.map((todo) => (
           <li key={todo.id}>
             {todo.text}
-            <button className='button'>Edit Todo</button>
+            <button className='button' onClick={() => editTodo(todo.id)}>
+              Edit Todo
+            </button>
             <button className='button' onClick={() => deleteTodo(todo.id)}>
               Delete Todo
             </button>
           </li>
         ))}
       </ul>
+      <button className='button' onClick={clearTodos}>
+        Clear All Todos
+      </button>
     </div>
   );
 }
