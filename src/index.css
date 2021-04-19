@@ -74,6 +74,10 @@
   margin-bottom: 0;
 }
 
+.list__item-completed {
+  text-decoration: line-through;
+}
+
 .icons {
   display: flex;
   align-items: center;

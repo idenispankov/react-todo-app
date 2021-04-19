@@ -1,4 +1,11 @@
-const Todos = ({ todos, setTodos, setDeleteMessage, setMessage }) => {
+const Todos = ({
+  todos,
+  setTodos,
+  setDeleteMessage,
+  setMessage,
+  isCompleted,
+  setIsCompleted,
+}) => {
   const handleDelete = (id) => {
     setTodos(todos.filter((todo) => todo.todoId !== id));
     setDeleteMessage(true);
@@ -12,11 +19,19 @@ const Todos = ({ todos, setTodos, setDeleteMessage, setMessage }) => {
   const handleEditTodo = (id, text) => {
     alert(`Edit is coming soon, item ID: ${id}`);
   };
+
+  const handleComplete = (id) => {
+    alert(`Completed is coming soon, item ID: ${id}`);
+  };
   return (
     <ul className='list'>
       {todos.map((todo) => {
         return (
-          <li key={todo.todoId} className='list__item'>
+          <li
+            key={todo.todoId}
+            className={`list__item ${isCompleted && 'list__item-completed'}`}
+            onDoubleClick={() => handleComplete(todo.todoId)}
+          >
             {todo.todoText}
             <div className='icons'>
               <span

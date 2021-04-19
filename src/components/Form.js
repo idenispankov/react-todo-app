@@ -7,6 +7,7 @@ const Form = ({
   setErrorMessage,
   setSuccessMessage,
   setMessage,
+  inputRef,
 }) => {
   const [inputValue, setInputValue] = useState('');
 
@@ -44,6 +45,7 @@ const Form = ({
         placeholder='Add Todo...'
         value={inputValue}
         onChange={handleChange}
+        ref={inputRef}
       />
       <button type='submit' className='form__button'>
         Add

@@ -1,15 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Form from './components/Form';
 import Todos from './components/Todos';
 import Message from './components/Message';
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [message, setMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
   const [deleteMessage, setDeleteMessage] = useState(false);
-  const [message, setMessage] = useState(false);
-  const [messageText, setMessageText] = useState('');
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   return (
     <div className='page__container'>
@@ -19,7 +24,6 @@ function App() {
           errorMessage={errorMessage}
           successMessage={successMessage}
           deleteMessage={deleteMessage}
-          messageText={messageText}
         />
       )}
 
@@ -29,7 +33,7 @@ function App() {
         setErrorMessage={setErrorMessage}
         setSuccessMessage={setSuccessMessage}
         setMessage={setMessage}
-        setMessageText={setMessageText}
+        inputRef={inputRef}
       />
       <Todos
         todos={todos}
@@ -43,15 +47,12 @@ function App() {
 
 export default App;
 
-//  Next to create:
-//  1. Error Message - Done
-//  2. Success message - Done
-//  3. Delete Success Message - Done
-//  4. Combine messages together - Done
+//  Next to add:
 
-//  5. Popup for edit todos
-//  6. Confirm Popup for delete todo
+//  1. Cross completed todo
+//  2. Popup for edit todos
+//  3. Confirm Popup for delete todo
 
-//  6. NavBar Component with Routes
-//  7. Route for description of each todo onClick
-//  8. Wrong url Error Route
+//  4. NavBar Component with Routes
+//  5. Route for description of each todo onClick
+//  6. Wrong url Error Route
