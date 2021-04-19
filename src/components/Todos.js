@@ -4,7 +4,7 @@ const Todos = ({ todos, setTodos, setDeleteMessage }) => {
     setDeleteMessage(true);
     setTimeout(() => {
       setDeleteMessage(false);
-    }, 2000);
+    }, 1500);
   };
 
   const handleEditTodo = (id, text) => {

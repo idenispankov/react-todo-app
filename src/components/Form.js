@@ -14,7 +14,7 @@ const Form = ({ todos, setTodos, setErrorMessage, setSuccessMessage }) => {
       setErrorMessage(true);
       setTimeout(() => {
         setErrorMessage(false);
-      }, 2000);
+      }, 1500);
       return;
     }
     setTodos([...todos, { todoText: inputValue, todoId: uuidv4() }]);
@@ -22,7 +22,7 @@ const Form = ({ todos, setTodos, setErrorMessage, setSuccessMessage }) => {
     setSuccessMessage(true);
     setTimeout(() => {
       setSuccessMessage(false);
-    }, 2000);
+    }, 1500);
   };
 
   return (

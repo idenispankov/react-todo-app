@@ -39,7 +39,10 @@ export default App;
 //  2. Success message - Done
 //  3. Delete Success Message - Done
 //  4. Combine messages together
+
 //  5. Popup for edit todos
+//  6. Confirm Popup for delete todo
+
 //  6. NavBar Component with Routes
 //  7. Route for description of each todo onClick
 //  8. Wrong url Error Route
